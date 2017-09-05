@@ -19,7 +19,10 @@
 import datetime
  
 def ConvertEpochToStandard(EpochTime):
-	return (datetime.datetime.fromtimestamp(EpochTime).strftime('%c'))
+	try:
+		return (datetime.datetime.fromtimestamp(EpochTime).strftime('%c'))
+	except:
+		return EpochTime  #giving back the data it gave
 
 
 def OpenFile():
