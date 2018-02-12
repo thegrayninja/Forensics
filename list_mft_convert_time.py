@@ -4,6 +4,7 @@
 # Specifically created for list_mft.py. Can almost guarantee it will fail with anything else.
 # My brain can't convert epoch time...so this script does it for me
 
+#owner of list_mft - https://github.com/williballenthin/INDXParse
 
 # note: the below is information regarding the report exported
 # 	from list_mft.py. No headers are included...so...good luck
@@ -57,7 +58,7 @@ def ParseFile(MyDataContents):
             UpdateFile += "%s\n" % (ParsedLines[10])
             LineCount += 1
         except:
-            ErrorMessage = "%d|Error for { %s }.\n" % (LineCount, i)
+            ErrorMessage = "%d|Error occured on line { %d } in original document.\n" % (LineCount, LineCount)
             print(ErrorMessage)
             UpdateFile += ErrorMessage
             LineCount += 1
